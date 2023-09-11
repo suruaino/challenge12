@@ -1,0 +1,343 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+* p,
+* a{
+    color: var(--Gray);
+    /* color: white; */
+    font-weight: 400;
+}
+:root{
+    /* ===### Primary=== */
+
+--Cyan: hsl(180, 66%, 49%);
+--Dark-Violet: hsl(257, 27%, 26%);
+--Section3Bg: hsl(180, 8%, 95%);
+
+/* ===### Secondary=== */
+--Red: hsl(0, 87%, 67%);
+
+/* ===### Neutral=== */
+--Gray: hsl(0, 0%, 75%);
+--Grayish-Violet: hsl(257, 7%, 63%);
+--Very-Dark-Blue: hsl(255, 11%, 22%);
+--Very-Dark-Violet: hsl(260, 8%, 14%);
+
+/* ===###Button hover color=== */
+--btn-hover: hsl(180, 84%, 63%);
+}
+main :is(h1, h2, h3){
+    font-weight: 700;
+}
+body{
+    max-width: 100%;
+    font-family: Poppins;
+    background-color: white;
+    font-size: 18px;
+}
+/*===== Check out for nav menu and toggle below and within =====*/
+header nav{
+    top: 4rem;
+    padding: 1.5rem 1.5rem;
+    position: absolute;
+}
+header nav ul{
+    background: var(--Dark-Violet);
+}
+header nav ul li button{
+    width: 100%;
+    height: 3.2rem;
+    background-color: var(--Cyan);
+    border-radius: 50px;
+    color: white;
+}
+header input:checked ~ nav,
+header input:checked ~ #close-bar{
+    display: flex;
+    flex-direction: column;
+}
+header input:checked ~ #menu-bar{
+    display: none;
+}
+@media only screen and (min-width:768px){
+    header nav{
+        top: 0;
+        padding: 0;
+        position: static;
+        width: 100%;
+        height: auto; 
+        gap: calc(100% - 800px);
+               
+    }
+    header nav ul{
+        background: none;
+    }
+    header nav ul li button{
+        width: 8rem;
+        height: 3rem;
+        background-color: var(--Cyan);
+        border-radius: 50px;
+        color: white; 
+    }
+    header input:checked ~ nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+    
+}
+@media only screen and (min-width:768px){
+    header nav{
+        gap: calc(100% - ());
+               
+    }
+}
+/*===== Check out for nav menu and toggle above and within =====*/
+
+main p{
+    font-size: 16px;
+}
+main .section1 h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 3rem;
+
+}
+main .section1 .left button{
+    margin-top: .8rem;
+}
+main .section1 .left button{
+    width: 13rem;
+    height: 3.5rem;
+    background-color: var(--Cyan);
+    border-radius: 50px;
+    color: white; 
+}
+@media only screen and (min-width:768px){
+    main .section1 h1{
+        font-size: 5rem;
+        font-weight: 700;
+        line-height: 6rem;
+    
+    }
+    main .section1 p{
+        font-size: 24px;
+        max-width: 43rem;
+    }
+}
+@media only screen and (min-width:768px){
+    main .section1 .left{
+        width: 70%;
+    }
+}
+main .section2 .sectionbx{
+    background-image: url(images/bg-shorten-mobile.svg);
+    background-color: var(--Dark-Violet);
+    background-repeat: no-repeat;
+    background-position: 90px 0;
+}
+/* main .section2 .sectionbx .inputbx input::placeholder{
+    color: rgba(237, 45, 45, 0.724);
+} */
+main .section2 .sectionbx button{
+    width: 100%;
+    height: 4rem;
+    background-color: var(--Cyan);
+    border-radius: 5px;
+    color: white;
+    /* padding: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media only screen and (min-width:450px){
+    main .section2 .sectionbx button{
+        font-size: 1.2rem;
+        padding: inherit 1rem;
+    } 
+}
+@media only screen and (min-width:768px){
+    main .section2 .sectionbx{
+        background-image: url(images/bg-shorten-desktop.svg);
+        background-position: center;
+        background-size: 100% 100%;
+
+    }
+    main .section2 .sectionbx button{
+        width: 20%;
+        min-width: 60px;
+        height: 4rem;
+        background-color: var(--Cyan);
+        border-radius: 8px;
+        color: white;
+        font-size: .9rem;
+    }
+}
+main .section3{
+    background-color: var(--Section3Bg);
+    
+}
+main .section3 .top h2{
+    font-size: 1.7rem;
+}
+main .section3 .bottom{
+    position: relative;
+}
+/* main .section3 .bottom .card{
+    height: 100%;
+} */
+main .section3 .bottom .card .imgbx{
+    background-color: var(--Dark-Violet);
+    width: 85px;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 50%;
+}
+main .section3 #shortenedUrl{
+    width: 100%;
+    display: none;
+}
+main .section3 #shortenedUrl .shotenedbx button{
+    width: 100%;
+    height: 4rem;
+    padding: 0 2rem;
+    background-color: var(--Cyan);
+    border-radius: 5px;
+    color: white;
+}
+main .section3 #shortenedUrl .shotenedbx button:hover{
+    background: var(--btn-hover);
+}
+#linkLb{
+    visibility: hidden;
+    font-size: .9rem;
+    color: rgba(237, 45, 45, 0.724);
+    margin-top: -6px;
+
+}
+#longUrl{
+    border: none;
+}
+main .section3 .bottom::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: .5rem;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    /* right: 50%; */
+    transform: translateX(-50%);
+    background-color: var(--Cyan);
+    z-index: 0;
+}
+@media only screen and (min-width:768px){
+    main .section3 .top h2{
+        font-size: 2.5rem;
+    }
+    main .section3 .top p{
+        font-size: 1.25rem;
+        max-width: 36rem;
+    }
+    main .section3 .bottom{
+        height: 20rem;
+        height: auto;
+    }
+    main .section3 .bottom .card{
+        width: 100%;
+        height: 83%;
+      
+    }
+    main .section3 .bottom::before{
+        width: 100%;
+        height: .5rem;
+        top: 50%;
+        bottom: 50%;
+        transform: translateX(-50%);
+    }
+    main .section3 #shortenedUrl{
+        width: 100%;
+        padding: 1rem;
+    }
+    main .section3 #shortenedUrl .shotenedbx button{
+        width: auto;
+        height: 4rem;
+        background-color: var(--Cyan);
+        border-radius: 5px;
+        color: white;
+    }
+}
+main .section4{
+    background: url(images/bg-boost-mobile.svg);
+    background-color: var(--Dark-Violet);
+    background-position: 0px 0;
+    background-size: 375px 300px;
+    background-repeat: no-repeat;
+    height: 18.7rem;
+}
+main .section4 h2{
+    font-size: 1.65rem;
+}
+main .section4 button{
+    width: 13rem;
+    height: 3.5rem;
+    background-color: var(--Cyan);
+    border-radius: 50px;
+    color: white; 
+    font-weight: 700;
+}
+@media only screen and (min-width:768px){
+    main .section4{
+        background: url(images/bg-boost-desktop.svg);
+        background-color: var(--Dark-Violet);
+        background-repeat: repeat-x;
+        background-position: center;
+        background-size: 100% 100%;
+        height: 15rem;
+    }
+    main .section4 h2{
+        font-size: 2.5rem;
+    }
+}
+footer{
+    background-color: var(--Very-Dark-Violet);
+}
+footer a{
+    color: var(--Gray);
+    transition: 0.5s;
+}
+
+footer .social-links a .fa {
+    color: white;
+    font-size: 24px; 
+    transition: 0.5s;
+}
+
+/* === On button hovers === */
+header nav ul a:hover{
+    color: var(--Cyan);
+}
+@media only screen and (min-width:768px) {
+    header nav ul a:hover{
+        color: black;
+    } 
+}
+header button:hover,
+main .section1 .left button:hover,
+main .section2 button:hover,
+main .section4 button:hover{
+    background-color: var(--btn-hover);
+}
+
+footer * a:hover:hover,
+footer .social-links a .fa:hover{
+    color: var(--Cyan);
+}
+

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/ee600e9388.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="w-full h-20 px-6 md:pl-40 md:pr-10 py-8 pt-8 md:pt-16 flex justify-between items-center  overflow-hidden">
+
+    <img src="images/logo_header.svg" alt="Header Logo" class="w-30 h-8 ">
+    <input type="checkbox" name="" id="toggle" class=" w-7 h-7 absolute right-7 opacity-0 z-20 md:hidden">
+
+    <i class="absolute right-8 md:hidden fa-solid fa-bars text-gray-400"></i>
+
+    <nav class="w-full h-screen md:h-auto px-6 md:pt-0 md:px-0 right-0 hidden md:flex md:flex-row md:justify-end items-center">
+      <ul
+        class="font-semibold md:text-base text-white md:text-black md:bg-transparent w-full md:w-auto px-6 pt-11 md:pt-0 py-6 md:py-0 mt-3 md:mt-0 flex flex-col md:flex-row items-center gap-8 md:gap-4 lg:gap-8 rounded-t-md md:rounded-none">
+        <li><a href="">Feature</a></li>
+        <li><a href="">Pricing</a></li>
+        <li><a href="">Resources</a></li>
+        <hr class="w-full z-50">
+      </ul>
+
+      <ul
+        class="text-white md:text-black font-semibold w-full px-6 pb-10 md:pb-0 pt-2 md:pt-0 flex flex-col md:flex-row items-center md:justify-end gap-8 md:gap-4 rounded-b-md">
+        <li class="w-full flex justify-center md:justify-end"><a href="">Login</a></li>
+        <li class="w-full flex justify-center md:justify-end"><button>Sign Up</button></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main>
+    <section class="section1 pt-10 md:pt-28 flex flex-col md:flex-row gap-10 md:gap-1 overflow-hidden">
+      <div
+        class="left md:w-2/3 text-center md:text-left px-6 md:px-32 lg:px-40 md:py-3 flex flex-col items-center md:items-start gap-3 md:gap-1 order-2 md:order-1">
+        <h1 class="font-extrabold">More than just shorter links</h1>
+
+        <p class="leading-8 md:leading-10">Build your brand’s recognition and get detailed insights
+          on how your links are performing.</p>
+
+        <button>Get Started</button>
+      </div>
+      <div class="right order-1">
+        <img src="images/illustration-working.svg" alt="" class="w-full ml-6 md:ml-0">
+      </div>
+    </section>
+
+    <section
+      class="section2 w-full px-6 md:px-40 pt-2 md:pt-0 translate-y-20 flex flex-col gap-4 items-center justify-center">
+      <div
+        class="sectionbx w-full h-auto md:h-44 p-6 pt-12 md:px-16 flex flex-col md:flex-row items-start justify-center gap-4 rounded-xl">
+        <div class="inputbx w-full h-auto flex flex-col  items-center justify-center">
+          <input type="url" id="longUrl" placeholder="Shorten a link here..."
+            class="text-sm  w-full h-16 px-4 flex rounded-md">
+          <label for="longUrl" id="linkLb" class="text-left w-full flex justify-start">
+            <!--Form validation text goes in here-->
+            <i class="mt-2 text-base">Please add a link</i>
+          </label>
+        </div>
+        <button class="w-1/5" id="shortenBtn"> Shorten It!</button>
+      </div>
+
+    </section>
+
+    <section class="section3 text-center pt-40 md:pt-48 pb-20 md:pb-44 flex px-6 md:px-40 flex-col items-center gap-12">
+
+      <div id="shortenedUrl"
+        class="text-left h-auto bg-white py-6 flex flex-col md:flex-row items-center justify-center rounded-lg">
+        <div id="longUrlLink" class="h-10 w-full px-6 border-b-2 md:border-y-0 flex items-center "></div>
+        <div class="shotenedbx flex flex-col md:flex-row justify-center items-center">
+          <div id="shortenedUrlLink" class="text-cyan-400 h-10 w-full px-6 flex items-center "></div>
+          <button class="w-full" id="copyBtn">Copy</button>
+        </div>
+      </div>
+
+      <div class="top px-6 flex flex-col gap-6">
+        <h2 class="text-3xl md:text-4xl md:only-of-type: font-bold mt-2">Advanced Statistics</h2>
+        <p class="leading-7">
+          Track how your links are performing across the web with our
+          advanced statistics dashboard.
+        </p>
+      </div>
+
+      <div class="bottom mt-10 flex flex-col md:flex-row gap-24  md:gap-8 ">
+
+        <div
+          class="card h-auto px-6 md:pl-8  py-9  md:pt-9 md:pb-0 flex flex-col items-center md:items-start text-left gap-4 bg-white relative mx-6 md:mx-0 translate-y-6 rounded-lg">
+          <div class="imgbx absolute -top-12">
+            <img src="images/icon-brand-recognition.svg" alt="" class="w-10">
+          </div>
+          <h3 class="text-2xl mt-8"> Brand Recognition</h3>
+          <p class="leading-7 h-full"> Boost your brand recognition with each click. Generic links don’t
+            mean a thing. Branded links help instil confidence in your content.</p>
+        </div>
+        <div
+          class="card px-6 md:pl-8  py-9 flex flex-col items-center md:items-start text-left gap-4 bg-white relative mx-6 md:mx-0 translate-y-16 rounded-lg">
+          <div class="imgbx absolute -top-12"><img src="images/icon-detailed-records.svg" alt="" class="w-10"></div>
+          <h3 class="text-2xl mt-8"> Detailed Records</h3>
+          <p class="leading-7"> Gain insights into who is clicking your links. Knowing when and where
+            people engage with your content helps inform better decisions.</p>
+        </div>
+        <div
+          class="card px-6 py-9 flex flex-col items-center md:items-start text-left gap-4 bg-white relative mx-6 md:mx-0  md:pl-8 translate-y-28 rounded-lg">
+          <div class="imgbx absolute -top-12">
+            <img src="images/icon-fully-customizable.svg" alt="" class="w-10">
+          </div>
+          <h3 class="text-2xl mt-8">Fully Customizable</h3>
+          <p class="leading-7"> Improve brand awareness and content discoverability through customizable
+            links, supercharging audience engagement.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section4 text-white h-72 flex flex-col gap-5 items-center justify-center">
+      <h2 class="font-semibold">Boost your links today</h2>
+      <button>Get Started</button>
+    </section>
+  </main>
+
+  <footer
+    class="w-full text-white md:px-40 py-12 md:pt-16 md:pb-20 flex flex-col justify-between md:flex-row items-center md:items-start gap-12">
+    <div class="left text-white pt-1">
+      <img src="images/logo_footer.svg" alt="" class="z-50 ">
+    </div>
+
+    <div
+      class="right text-sm  w-full md:w-auto flex flex-col md:flex-row md:justify-between  items-center md:items-start gap-3 md:gap-24">
+
+      <div class="text-links  w-full pb-6 flex flex-col items-center md:items-start">
+        <h4 class="text-base font-semibold pb-6">Features</h4>
+        <ul class="flex flex-col items-center md:items-start gap-3">
+          <li><a href="#">Link Shortening</a></li>
+          <li><a href="#">Branded Links</a></li>
+          <li><a href="#"> Analytics</a></li>
+        </ul>
+      </div>
+      <div class="text-links pb-6 text-base  flex flex-col items-center ">
+        <h4 class="font-semibold pb-6">Resources</h4>
+        <ul class="flex flex-col items-center md:items-start gap-2">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div class="text-links flex flex-col items-center md:items-start pb-6">
+        <h4 class="text-base  font-semibold pb-6">Company</h4>
+        <ul class="flex flex-col items-center md:items-start gap-2">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social-links w-full pt-2 flex justify-center md:justify-end items-center md:items-start">
+        <ul class="w-full text-white flex justify-center md:items-start md:justify-end gap-6">
+          <li><a href="#"><i class=" fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">SURU EMMANUEL</a>.
+  </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
