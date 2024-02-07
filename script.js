@@ -1,15 +1,18 @@
 "";
 function shortenUrl() {
+  let shortenedContainer = [];
+  let shortened = document.getElementById("shortenedUrl");
   const longUrl = document.getElementById("longUrl").value;
   const shortenedUrlLink =
     "rel.ink/" + Math.random().toString(28).substring(2, 8);
   const inputBorder = document.getElementById("longUrl");
 
-  // specifying when where the shortened url is to display.
+  // specifying where the shortened url is to display.
   if (longUrl == "") {
-    document.getElementById("shortenedUrl").style.display = "none";
+    
+    shortened.style.display = "none";
   } else {
-    document.getElementById("shortenedUrl").style.display = "flex";
+    shortenedContainer.push(shortened.style.display = "flex");
   }
 
   if (longUrl) {

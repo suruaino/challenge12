@@ -117,9 +117,9 @@ main .section1 .left button{
 }
 @media only screen and (min-width:768px){
     main .section1 h1{
-        font-size: 5rem;
+        font-size: 6rem;
         font-weight: 700;
-        line-height: 6rem;
+        line-height: 7rem;
     
     }
     main .section1 p{
@@ -129,7 +129,7 @@ main .section1 .left button{
 }
 @media only screen and (min-width:768px){
     main .section1 .left{
-        width: 70%;
+        min-width: 70%;
     }
 }
 main .section2 .sectionbx{
@@ -328,7 +328,7 @@ main .section4 button:hover{
     background-color: var(--btn-hover);
 }
 
-footer * a:hover:hover,
+footer * a:hover,
 footer .social-links a .fa:hover{
     color: var(--Cyan);
 }
